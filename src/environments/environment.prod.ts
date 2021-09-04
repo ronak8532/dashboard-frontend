@@ -1,4 +1,4 @@
 export const environment = {
-  URL: 'http://localhost:3001/api',
+  URL: 'https://dashboard8852.herokuapp.com/api',
   production: false
 };
