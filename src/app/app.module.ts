@@ -46,6 +46,10 @@ import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpConfigInterceptor } from './httpconfig.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeLayoutComponent } from './containers/home-layout/home-layout.component';
+import { UserProfileComponent } from './containers/user-profile/user-profile.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ModalsComponent } from './views/notifications/modals.component';
 
 @NgModule({
   imports: [
@@ -66,7 +70,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ModalModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -74,7 +79,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeLayoutComponent,
+    UserProfileComponent,
+    ModalsComponent
   ],
   providers: [
     {

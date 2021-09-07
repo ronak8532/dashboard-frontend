@@ -1,0 +1,86 @@
+<div class="container emp-profile">
+  <form method="post">
+      <div class="row">
+          <div class="col-md-4">
+
+          </div>
+          <div class="col-md-6">
+
+          </div>
+          <div class="col-md-2">
+              <button type="button" class="btn btn-secondary mr-1" data-toggle="modal" (click)="myModal.show()">Edit Profile</button>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+              <div class="tab-content profile-tab" id="myTabContent">
+                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <label>FirstName</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <p>{{user.firstName}}</p>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <label>LastName</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <p>{{user.lastName}}</p>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <label>Email</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <p>{{user.email}}</p>
+                                  </div>
+                              </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </form>
+</div>
+<div bsModal #myModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Update Profile</h4>
+        <button type="button" class="close" (click)="myModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="company">FirstName</label>
+              <input type="text" class="form-control" [(ngModel)]="user.firstName"  placeholder="FirstName">
+            </div>
+            <div class="form-group">
+              <label for="vat">LastName</label>
+              <input type="text" class="form-control" [(ngModel)]="user.lastName" placeholder="LastName">
+            </div>
+            <div class="form-group">
+              <label for="street">Email</label>
+              <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="Email">
+            </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Password">
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="myModal.hide()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="update()">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>

@@ -4,6 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  URL: 'https://dashboard8852.herokuapp.com/api',
+  URL: 'http://localhost:3001/api',
+  facebookAppId: '314930319788683',
   production: false
 };

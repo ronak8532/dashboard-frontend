@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       this.authService.authenticateUser(this.loginForm.value).subscribe((res) => {
         if(res && res.token) {
           localStorage.setItem('token', res.token);
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['']);
           this.toastr.success('You are Authorized.');
         } else if(res && res.error_message) {
           this.toastr.error(res.error_message);

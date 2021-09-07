@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
+import { HomeLayoutComponent } from './containers/home-layout/home-layout.component';
+import { UserProfileComponent } from './containers/user-profile/user-profile.component';
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
@@ -12,6 +14,11 @@ import { RegisterComponent } from './views/register/register.component';
 export const routes: Routes = [
   {
     path: '',
+    component: HomeLayoutComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'dashboard',
     redirectTo: 'dashboard',
     pathMatch: 'full',
   },
@@ -50,6 +57,10 @@ export const routes: Routes = [
       title: 'Home'
     },
     children: [
+      {
+        path: 'profile',
+       component: UserProfileComponent,
+      },
       {
         path: 'base',
         loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
