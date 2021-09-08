@@ -71,7 +71,7 @@ import { ModalsComponent } from './views/notifications/modals.component';
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
   declarations: [
     AppComponent,
@@ -82,7 +82,6 @@ import { ModalsComponent } from './views/notifications/modals.component';
     RegisterComponent,
     HomeLayoutComponent,
     UserProfileComponent,
-    ModalsComponent
   ],
   providers: [
     {
